@@ -1,12 +1,25 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const Color primaryColor = Color.fromARGB(255, 108, 206, 116);
 const Color backgroundDarkColor = Color(0xFF171822);
 const Color backgroundLightColor = Color(0xFFF1F3F6);
 
+void setStatusBar(String theme) {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarBrightness: theme == "dark" ? Brightness.dark : Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
+}
+
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
+  scaffoldBackgroundColor: Colors.white,
   backgroundColor: Colors.white,
   primaryColor: primaryColor,
   cardColor: const Color(0xffF1F3F6),
@@ -66,12 +79,14 @@ ThemeData lightTheme = ThemeData(
 );
 
 ThemeData darkTheme = ThemeData(
-  brightness: Brightness.dark,
+  brightness: Brightness.light,
+  scaffoldBackgroundColor: backgroundDarkColor,
   backgroundColor: backgroundDarkColor,
+  primaryColor: primaryColor,
+  cardColor: const Color(0xffF1F3F6),
   iconTheme: const IconThemeData(
     color: Color(0xff7b7f9e),
   ),
-  cardColor: const Color(0xFF212330),
   textTheme: TextTheme(
     bodyText2: GoogleFonts.poppins(
       fontSize: 12,

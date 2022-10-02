@@ -20,9 +20,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Theme.of(context).backgroundColor,
-      child: SafeArea(
+    return Scaffold(
+      // color: Theme.of(context).backgroundColor,
+      body: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

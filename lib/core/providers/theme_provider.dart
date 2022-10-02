@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtheme/ui/constant/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider with ChangeNotifier {
@@ -20,6 +21,7 @@ class ThemeProvider with ChangeNotifier {
     final prefs = await _sharedPreferences;
     await prefs.setString('theme', theme);
 
+    setStatusBar(theme);
     _currentTheme = theme;
     notifyListeners();
   }
