@@ -7,10 +7,10 @@ import 'package:mtheme/ui/constant/constant.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -21,7 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // color: Theme.of(context).backgroundColor,
       body: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -62,21 +61,21 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Text(
               formattedTime,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(width: 30),
             SvgPicture.asset(cloud),
             const SizedBox(width: 8),
             Text(
               '34° C',
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
         ),
         const SizedBox(height: 2),
         Text(
           formattedDate,
-          style: Theme.of(context).textTheme.bodyText2,
+          style: Theme.of(context).textTheme.bodyMedium,
         )
       ],
     );
@@ -92,12 +91,12 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(height: 18),
           Text(
             'mTheme',
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 18),
           Text(
             'Aesthetic is concerned with beauty or the appreciation of beauty. \n\n (Theme)',
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
           )
         ],
       ),
@@ -119,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
             },
             child: Text(
               'Sign in',
-              style: Theme.of(context).textTheme.button,
+              style: Theme.of(context).textTheme.labelLarge,
             ),
           ),
           const SizedBox(height: 16),
@@ -129,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
             },
             child: Text(
               'Create an Account',
-              style: Theme.of(context).textTheme.bodyText2,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           )
         ],
